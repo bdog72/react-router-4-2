@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Segment, Container, Header, Icon } from 'semantic-ui-react'
+
 import {
   BrowserRouter as Router,
   Route, Link, Redirect, Switch
@@ -7,8 +9,12 @@ import {
 
 const Bozo = () => (
   <Router>
-    <div>
-      <h2>What kind of EDM do you like</h2>
+    <Container text>
+      <Header dividing>
+        <h2>
+          What kind of EDM do you like
+        </h2>
+      </Header>
       <ul>
         <li>
           <Link to='/progressive'>
@@ -26,6 +32,18 @@ const Bozo = () => (
           </Link>
         </li>
       </ul>
+      <Icon.Group size='huge'>
+        <Icon name='sound' size='big' color='green' />
+      </Icon.Group>
+      <Icon.Group size='huge'>
+        <Icon name='sound' size='big' color='green' />
+      </Icon.Group>
+      <Icon.Group size='huge'>
+        <Icon name='sound' size='big' color='green' />
+      </Icon.Group>
+      <Icon.Group size='huge'>
+        <Icon name='sound' size='big' color='green' />
+      </Icon.Group>
       <hr />
       <Switch>
         <Route path='/progressive/house' render={() => (
@@ -46,12 +64,12 @@ const Bozo = () => (
           </h3>
         )} />
         <Route render={({ location }) => (
-          <div>
+          <Segment inverted color='red'>
             <h3>Error</h3>
-          </div>
+          </Segment>
         )} />
       </Switch>
-    </div>
+    </Container>
   </Router>
 )
 
